@@ -321,6 +321,6 @@ http://localhost:8080/api/tasks
 
 ---
 
-## Authors
+## Author
 
 **Iman Tahir**
