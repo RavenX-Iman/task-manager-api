@@ -3,6 +3,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.time.LocalDateTime;
+import com.iman.taskmanager.entity.TaskStatus;
 
 
 @Entity
@@ -26,7 +27,7 @@ public class Task {
     @Column(nullable = false)
     private TaskStatus status = TaskStatus.PENDING;
 
-        @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
@@ -103,19 +104,4 @@ public class Task {
     }
 }
 
-enum TaskStatus {
-    PENDING("Pending"),
-    IN_PROGRESS("In Progress"),
-    COMPLETED("Completed"),
-    CANCELLED("Cancelled");
 
-    private final String displayName;
-
-    TaskStatus(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-}
